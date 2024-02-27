@@ -1,24 +1,26 @@
 body {
   margin: 0;
   box-sizing: border-box;
+}
+html {
   scroll-behavior: smooth;
-  padding-bottom: 1000px;
 }
 .home-section {
-  height: 80vh;
+  height: 83vh;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: #000000;
   color: white;
 }
 .head {
   height: fit-content;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  background-color: rgb(38, 37, 37);
+  grid-template-columns: 1fr 2fr;
+  background-color: #262525;
   border-bottom: 1px solid blue;
-  box-shadow: -1px -1px 8px 1px white inset, -1px -1px 8px 1px blue;
+  box-shadow: -1px -1px 8px 1px rgb(255, 255, 255) inset,
+    -1px -1px 8px 1px hsl(240, 100%, 50%);
   color: white;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 5;
@@ -38,40 +40,78 @@ body {
   display: flex;
   align-items: end;
   margin-bottom: 8px;
-  color: rgb(22, 22, 194);
-  margin-left: -14px;
+  color: pink;
+  margin-left: 5px;
+  font-size: 24px;
+}
+.section li > a {
+  padding: 10px;
+}
+.section li > a:hover {
+  background-color: rgba(128, 144, 192, 0.2);
+}
+.section li > a:active {
+  color: red;
+}
+.sub-cont {
+  width: 170px;
+  height: auto;
+  background: gray;
+  color: black;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+.substitue {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  font-size: 22px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  z-index: 10;
+  padding-inline-start: 0;
+}
+.reconnect {
+  margin-bottom: 8px;
+}
+.change {
+  color: black;
+  display: flex;
+}
+a.change:hover {
+  background-color: white;
+  opacity: 0.4;
+}
+.visible {
+  visibility: visible;
+}
+.bitqad {
+  height: 50px;
+  border-radius: 25px;
 }
 .section {
-  /* background-color: blue; */
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 25px;
+  justify-content: flex-end;
   list-style-type: none;
+  margin-right: 20px;
 }
-/* inserting profile */
-.profile-container {
+.information {
   display: flex;
-  justify-content: end;
-  align-items: end;
-  margin-top: 0;
-}
-.profile {
-  height: 600px;
-  width: auto;
-  position: absolute;
-  top: 20px;
-  z-index: 0;
+  justify-content: center;
 }
 /* intro section design */
 .first {
-  /* background-color: blue; */
   margin-left: 60px;
   margin-top: 52px;
 }
-.hi,
-.name {
-  font-size: 90px;
+.hi {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 0;
   margin-top: 0;
   color: gray;
@@ -79,32 +119,52 @@ body {
 .name {
   color: violet;
   margin-top: 8px;
-  font-size: 80px;
-  letter-spacing: 8px;
+  font-size: 100px;
+  letter-spacing: 18px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 .work {
-  font-size: 40px;
-  letter-spacing: 9px;
+  font-size: 23px;
+  letter-spacing: 7px;
+  display: flex;
+  justify-content: center;
 }
-.contact-btn{
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.contact-btn {
   padding: 15px;
   background-color: green;
   border: none;
+  border-radius: 5px;
   color: white;
   font-size: 15px;
 }
 /* information about me */
 .info-container {
+  width: 100%;
   display: flex;
-  align-items: end;
+  justify-content: end;
   gap: 40px;
   position: absolute;
-  bottom: 14vh;
+  bottom: 20vh;
+}
+.mission {
+  width: 60vw;
+  font-size: 20px;
+  color: #a1bac5;
+  margin-left: 10vh;
+  margin-top: 8vh;
 }
 
-.email-ctn,.number-ctn {
+.email-ctn {
   border-right: 1px solid gray;
   height: 80px;
+  border-left: 1px solid gray;
 }
 h5 {
   font-size: 23px;
@@ -112,31 +172,35 @@ h5 {
   color: green;
 }
 
-.email, .phone, .address{
+.email,
+.address {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: flex-end;
   margin-bottom: 0px;
 }
-.g-address,.number, .place {
-  padding-right: 10px;
-  font-size: 19px;
+.g-address {
+  margin-left: 5px;
+  margin-right: 5px;
 }
-.phone, .number, .address, .place{
-margin-left: -25px;
+.address {
+  margin-right: 10px;
 }
-.address-ctn{
+
+.place {
+  margin-left: -25px;
+}
+.address-ctn {
   height: 80px;
 }
 /* designs for skills section */
-.skills-ctn{
+.skills-ctn {
   height: 760px;
- background-image: url(/utils/skills-background.jpg);
- background-size: contain;
- /* background-position: 20px; */
+  background-image: url(/utils/skills-background.jpg);
+  background-size: contain;
   margin-top: 0;
 }
-.skill-head{
+.skill-head {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -144,21 +208,25 @@ margin-left: -25px;
   color: goldenrod;
   margin-bottom: 20px;
 }
-.sub-ctn{
+.sub-ctn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.sub-section{
-   background-color: rgb(209, 245, 234); 
+.sub-section {
+  background-color: rgb(209, 245, 234);
   width: 50vw;
   height: 74vh;
   display: flex;
-  grid-template-columns: repeat(5, 200px); 
+  grid-template-columns: repeat(5, 200px);
   gap: 20px;
   margin-top: 4rem;
 }
-.first-skill, .second-skill, .third-skill,.fourth-skill, .fifth-skill, .sixth-skill{
+.first-skill,
+.second-skill,
+.third-skill,
+.fourth-skill,
+.fifth-skill {
   background-color: burlywood;
   display: flex;
   justify-content: center;
@@ -170,34 +238,419 @@ margin-left: -25px;
   font-weight: 900;
   font-size: 15px;
 }
-.first-skill{
+.first-skill {
   position: absolute;
   top: 61rem;
   left: 20rem;
 }
-.second-skill{
+.second-skill {
   background-color: rosybrown;
   position: absolute;
   top: 46rem;
   left: 47%;
   color: black;
 }
-.third-skill{
+.third-skill {
   background-color: palegoldenrod;
   position: absolute;
   top: 61rem;
   left: 70rem;
 }
-.fourth-skill{
+.fourth-skill {
   background-color: orange;
   position: absolute;
   top: 61rem;
   left: 46rem;
 }
-.fifth-skill{
+.fifth-skill {
   background-color: teal;
   position: absolute;
-  top: 80rem;
+  top: 76rem;
   left: 46rem;
   color: white;
 }
+/* section for experience design */
+.exp-container {
+  height: 500px;
+  width: auto;
+  background-color: rgb(247, 246, 246);
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(6, minmax(360px, 800px));
+  gap: 2rem;
+  overflow-x: scroll;
+  margin-top: 10px;
+}
+.exp-head {
+  display: flex;
+  justify-content: center;
+  color: brown;
+  font-size: 30px;
+}
+.exp-container:first-child {
+  margin-left: 1rem;
+}
+.exp {
+  width: auto;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  background-color: white;
+  border-radius: 25px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+  /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+}
+h6 {
+  color: green;
+  font-weight: 80px;
+}
+.role-one {
+  color: green;
+}
+/* designing contact sction */
+.contact-ctn {
+  background-color: #262525;
+  height: 600px;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: green;
+}
+.sub-contact {
+  color: white;
+  font-size: 50px;
+  display: flex;
+  justify-content: start;
+  width: 40vw;
+  line-height: 70px;
+  margin-top: 0;
+  margin-left: 20px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  gap: 25px;
+  position: relative;
+  bottom: 22vh;
+  right: 30vh;
+}
+label {
+  color: white;
+  font-size: 18px;
+  margin-right: 5px;
+}
+input {
+  background-color: inherit;
+  border-bottom: 1px solid green;
+  width: 30vw;
+  padding: 10px;
+  color: white;
+}
+.textarea {
+  width: 32vw;
+  background-color: gray;
+  color: white;
+  border: 1px solid green;
+  border-radius: 10px;
+  cursor: pointer;
+}
+input::placeholder {
+  font-size: 20px;
+}
+
+.submit {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 65vh;
+  font-size: 4vh;
+  border-radius: 3px;
+}
+.testimony {
+  height: 810px;
+  background-color: #262525;
+  border-top: 1px solid blue;
+  margin-top: 1px;
+}
+.testimony-one,
+.testimony-two,
+.testimony-four,
+.testimony-five {
+  border-bottom: 1px groove green;
+}
+.testimony-head {
+  display: flex;
+  justify-content: center;
+  color: gold;
+  font-size: 30px;
+  margin-top: 0;
+}
+.testimony-ctn {
+  display: grid;
+  grid-template-columns: 1fr 763px;
+}
+.testimony-one,
+.testimony-two,
+.testimony-three,
+.testimony-four,
+.testimony-five,
+.testimony-six {
+  margin-left: 20px;
+  border-right: 1px solid green;
+}
+.img {
+  height: 11vh;
+  border-radius: 43px;
+}
+.person-name {
+  color: white;
+  margin-left: 7vw;
+  margin-top: -9vh;
+  font-size: 23px;
+}
+.occupation {
+  margin-left: 6vw;
+  color: white;
+}
+.saying {
+  margin-left: 12vh;
+  margin-top: 20px;
+  color: white;
+}
+.testimony-two,
+.testimony-three {
+  margin-top: 10px;
+}
+.testimony-four,
+.testimony-five,
+.testimony-six {
+  border-left: 1px solid green;
+  margin-left: 7px;
+}
+.reach-ctn {
+  width: 100%;
+}
+.reach {
+  background: green;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.footer {
+  height: 400px;
+  background-color: black;
+  color: white;
+}
+.footer-ctn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.footer-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-head {
+  font-size: 30px;
+  margin-bottom: 0;
+  margin-top: 13vh;
+}
+.footer-desc {
+  width: 40vw;
+  font-size: 20px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.icons a > img {
+  height: 35px;
+}
+.fb {
+  height: 35px;
+}
+.fb:hover {
+  transform: translate(2px, 2px);
+}
+.twt:hover {
+  transform: translate(2px, 2px);
+}
+.lnl:hover {
+  transform: translate(2px, 2px);
+}
+.tg:hover {
+  border-radius: 30px;
+  transform: translate(2px, 2px);
+}
+.footer-two {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.email-ctns,
+.web-ctn {
+  height: 130px;
+  width: 150px;
+  background-color: #294c5b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 8px 2px 2px #262525;
+}
+.email-img {
+  height: 35px;
+  margin-left: 20px;
+}
+.web-img {
+  height: 60px;
+}
+.addresse {
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+}
+.back-top {
+  position: fixed;
+  right: 30px;
+  bottom: 14vh;
+  animation: beep 2s infinite;
+}
+@keyframes beep {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.back {
+  height: 40px;
+}
+.transform-contact {
+  color: whitesmoke;
+  animation: move 2s infinite;
+}
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* designing the desktop layout */
+@media (width<=1405px) {
+  .change-says {
+    display: none;
+  }
+}
+@media (width<=1530px) {
+  .fourth-skill {
+    left: 44rem;
+  }
+  .fifth-skill {
+    left: 44rem;
+  }
+  .third-skill {
+    left: 64rem;
+  }
+}
+@media (width<=1398px) {
+  .fourth-skill {
+    left: 40rem;
+  }
+  .fifth-skill {
+    left: 40rem;
+  }
+  .third-skill {
+    left: 58rem;
+  }
+}
+@media (width>=1800px) {
+  .fourth-skill {
+    left: 51rem;
+  }
+  .fifth-skill {
+    left: 51rem;
+  }
+  .third-skill {
+    left: 78rem;
+  }
+}
+@media (width>=1950px) {
+  .fourth-skill {
+    left: 57rem;
+  }
+  .third-skill {
+    left: 85rem;
+  }
+  .fifth-skill {
+    left: 57rem;
+  }
+}
+/* @media (width<=1427px) {
+  .testimony {
+    height: 950px;
+  }
+
+
+} */
+/* @media (width>=1800px) {
+  .first-skill {
+    top: 51rem;
+    left: 25rem;
+  }
+  .second-skill {
+    top: 46rem;
+    left: 46rem;
+  }
+  .third-skill {
+    top: 46rem;
+    left: 70rem;
+  }
+  .fourth-skill {
+    top: 61rem;
+    left: 21rem;
+  }
+  .fifth-skill {
+    top: 61rem;
+    left: 46rem;
+  }
+} */
